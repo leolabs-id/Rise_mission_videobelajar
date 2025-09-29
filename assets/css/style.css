@@ -95,7 +95,9 @@ html, body {
     color: red;
 }
 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
+input[type="tel"],  
 input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -104,7 +106,9 @@ input[type="password"] {
     font-size: 16px;
 }
 
-input[type="email"]:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus, 
 input[type="password"]:focus {
     border-color: #ff9900;
     outline: none;

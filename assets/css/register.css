@@ -1,0 +1,84 @@
+/* Style khusus untuk halaman register */
+.input-phone-group {
+    display: flex;
+    width: 100%;
+}
+
+.country-code-select {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    background-color: #f8f8f8; 
+    padding: 0 10px; 
+}
+
+.country-code-select .flag-icon {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.country-code-select select {
+    border: none;
+    background-color: transparent;
+    padding: 12px 0;
+    font-size: 16px;
+    outline: none;
+    width: 60px;
+    cursor: pointer; 
+}
+
+.input-phone-group input[type="tel"] {
+    flex-grow: 1; 
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    background-color: white;
+    padding: 12px;
+}
+
+.input-phone-group input[type="tel"]:focus {
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+    border-color: #ff9900;
+}
+
+.input-phone-group:focus-within .country-code-select {
+    border-color: #ff9900;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+    border-right: none; 
+    z-index: 1; 
+}
+.input-phone-group:focus-within input#phone {
+    border-color: #ff9900 !important;
+    border-top: 1px solid #ff9900; 
+    border-bottom: 1px solid #ff9900; 
+    border-right: 1px solid #ff9900;
+    border-left: none;    
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+    z-index: 1;
+}
+
+
+#gender {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333333" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: center;
+    cursor: pointer;
+}
+
+#gender:focus {
+    border-color: #ff9900;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+}
