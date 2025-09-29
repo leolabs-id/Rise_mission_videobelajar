@@ -9,7 +9,7 @@
 html, body {
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-color: #FDFBF8; /* Latar belakang lembut */
+    background-color: #FDFBF8; 
     color: #333;
 }
 
@@ -23,36 +23,43 @@ html, body {
 .container-logo {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px; /* Padding di samping */
+    padding: 0 40px; 
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #ff9900; /* Warna logo */
     text-decoration: none;
+    display: inline-block;
+}
+
+.logo-video {
+    color: #F9A825; 
+}
+
+.logo-belajar {
+    color: #FF3D00;
 }
 
 /* --- MAIN CONTENT & LAYOUT --- */
 .main-content {
-    /* Menggunakan Flexbox untuk centering vertikal dan horizontal */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 64px); /* Tinggi viewport dikurangi tinggi nav */
+    min-height: calc(100vh - 64px); 
     padding: 40px 20px;
 }
 
 .login-container {
     width: 100%;
-    max-width: 400px; /* Batasan lebar kotak login */
+    max-width: 400px; 
 }
 
 .card {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan yang lebih menonjol */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 /* --- CARD HEADER --- */
@@ -104,13 +111,25 @@ input[type="password"]:focus {
     box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
 }
 
-/* Input dengan ikon (untuk password) */
+
 .input-with-icon {
     position: relative;
+    width: 100%;
 }
 
 .input-with-icon input {
-    padding-right: 40px; /* Beri ruang untuk ikon */
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-with-icon input:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
 }
 
 .toggle-password {
@@ -146,12 +165,12 @@ input[type="password"]:focus {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    text-decoration: none; /* Untuk tombol Daftar (tag a) */
+    text-decoration: none; 
     transition: background-color 0.2s ease;
 }
 
 .btn-primary-custom {
-    background-color: #4CAF50; /* Hijau Masuk */
+    background-color: #4CAF50; 
     color: white;
     margin-bottom: 12px;
 }
@@ -161,7 +180,7 @@ input[type="password"]:focus {
 }
 
 .btn-secondary-custom {
-    background-color: #E8F5E9; /* Hijau Daftar */
+    background-color: #E8F5E9; 
     color: #4CAF50;
     margin-bottom: 25px;
     border: 1px solid #E8F5E9;
