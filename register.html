@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Akun | Videobelajar</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="assets/css/register.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container-logo">
+            <a class="logo" href="#">
+                <span class="logo-video">video</span><span class="logo-belajar">belajar</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="login-container">
+            <div class="card">
+                <header class="card-header">
+                    <h1>Pendaftaran Akun</h1>
+                    <p class="subtitle">Yuk, daftarkan akunmu sekarang juga!</p>
+                </header>
+
+                <form action="#" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap <span class="required">*</span></label>
+                        <input type="text" id="name" placeholder="Masukkan nama lengkap" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail <span class="required">*</span></label>
+                        <input type="email" id="email" placeholder="Masukkan email Anda" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin <span class="required">*</span></label>
+                        <select id="gender" required>
+                            <option type="option" value="" disabled selected>Pilih jenis kelamin</option>
+                            <option type="option" value="pria">Pria</option>
+                            <option type="option" value="wanita">Wanita</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">No. Hp <span class="required">*</span></label>
+                        <div class="input-phone-group">
+                            <div class="country-code-select">
+                                <span class="flag-icon">🇮🇩</span>
+                                <select id="country-code">
+                                    <option value="+62" selected>+62</option>
+                                    </select>
+                            </div>
+                            <input type="tel" id="phone" placeholder="Masukkan nomor HP Anda" required pattern="[0-9]{9,15}" inputmode="numeric"    maxlength="15">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Kata Sandi <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="password" id="password" placeholder="Masukkan kata sandi Anda" required>
+                            <span class="toggle-password" id="togglePassword1">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Konfirmasi Kata Sandi <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <input type="password" id="confirm-password" placeholder="Konfirmasi kata sandi Anda" required>
+                            <span class="toggle-password" id="togglePassword2">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" class="forgot-link">Lupa Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary-custom">Daftar</button>
+                    
+                    <a href="login.html" class="btn btn-secondary-custom">Masuk</a>
+
+                    <div class="divider">
+                        <span>atau</span>
+                    </div>
+
+                    <button type="button" class="btn btn-google">
+                        <img src="https://www.google.com/favicon.ico" alt="Google icon">
+                        Daftar dengan Google
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/register.js"></script>
+</body>
+</html>
