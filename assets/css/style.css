@@ -247,6 +247,14 @@ input[type="password"]:focus {
     height: 20px;
 }
 
+
+@media (min-width: 768px) {
+    .login-container {
+        /* Naikkan lebar maksimum formulir di desktop/PC */
+        max-width: 500px; 
+    }
+}
+
 /* Responsif */
 /* @media (max-width: 600px) {
     .container-logo {
