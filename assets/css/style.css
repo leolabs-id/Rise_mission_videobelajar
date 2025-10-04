@@ -8,8 +8,8 @@
 /* Base Body dan Font */
 html, body {
     height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-color: #FDFBF8; 
+    font-family: 'poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #fffdf3; 
     color: #333;
 }
 
@@ -39,6 +39,11 @@ html, body {
 
 .logo-belajar {
     color: #FF3D00;
+}
+
+.logo-image {
+    height: 25px; 
+    width: auto;
 }
 
 /* --- MAIN CONTENT & LAYOUT --- */
