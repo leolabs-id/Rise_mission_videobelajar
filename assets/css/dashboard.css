@@ -27,6 +27,16 @@
     gap: 20px;
 }
 
+/* Ikon Hamburger (Default: Tersembunyi di Desktop) */
+.hamburger-menu {
+    display: none; /* KUNCI: Sembunyikan tombol secara default */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
 .nav-link {
     text-decoration: none;
     color: #333333AD;
@@ -51,7 +61,6 @@
 
 .hero-section {
     max-width: 1200px;
-    height: 400px;
     margin: 30px auto;
     padding: 0 40px;
 }
@@ -146,11 +155,20 @@
 
 .course-tabs {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 25px;
     border-bottom: 2px solid #e0eeef;
     padding-bottom: 10px;
     margin-bottom: 30px;
+
+    /* Menghilangkan scrollbar horizontal */
+    overflow-x: auto; 
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.course-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .tab-item {
@@ -161,6 +179,12 @@
     padding: 5px 0px;
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
+
+    /* Mencegah teks terpotong ke baris baru */
+    white-space: nowrap; 
+    
+    /* Mencegah tab menyusut terlalu kecil di dalam Flexbox */
+    flex-shrink: 0;
 }
 
 .tab-item.active {
@@ -231,6 +255,7 @@
     /* Membatasi deskripsi ke dua baris */
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -298,6 +323,200 @@
 
 
 
+.newsletter {
+    /* Memberi jarak atas dan bawah dari konten lain */
+    margin: 60px 0; 
+    padding: 0 40px; /* Padding samping untuk desktop */
+}
+
+.newsletter-content {
+    /* --- Properti Gambar Latar Belakang & Overlay --- */
+    /* Ganti 'newsletter-bg.jpg' dengan nama file gambar Anda */
+    background-image: url('../img/newsletter-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-color: #333; /* Warna fallback */
+    
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Posisi relatif untuk menampung pseudo-element overlay */
+    position: relative; 
+
+    /* Flexbox untuk centering konten teks */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Pseudo-element untuk Overlay Gelap (Agar Teks Terbaca) */
+.newsletter-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Overlay gelap semi-transparan (bisa disesuaikan) */
+    background: rgba(0, 0, 0, 0.9); 
+    border-radius: 12px;
+    z-index: 1;
+}
+
+/* Memastikan semua konten teks/form berada di atas overlay */
+.newsletter-content * {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Styling Teks --- */
+.newsletter-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: grey; 
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+.newsletter-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.newsletter-description {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* --- Styling Form --- */
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1; 
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px 0 0 6px; 
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+.btn-subscribe {
+    background-color: #ff9900; 
+    color: white;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 0 6px 6px 0; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    flex-shrink: 0; 
+}
+
+.btn-subscribe:hover {
+    background-color: #e68a00;
+}
+
+
+
+
+.footer {
+  border-top: 2px solid #f1f1f1;
+  background-color: #ffffff;
+  padding: 40px 80px;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.footer-info {
+  max-width: 350px;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.logo .video {
+  color: #ffb500;
+}
+
+.logo .belajar {
+  color: #ff5733;
+}
+
+.tagline {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.address, .phone {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ff5733;
+}
+
+
+
 
 
 
@@ -314,13 +533,17 @@
 /* Responsif Navbar */
 @media (max-width: 768px) {
     .navbar-container {
-        flex-direction: column;
         padding: 10px 20px;
     }
 
     .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none; /* KUNCI: Hilangkan tulisan Kategori dan Avatar */
+    }
+
+    .hamburger-menu {
+        display: block; /* KUNCI: Tampilkan ikon garis tiga di posisi yang sama */
+        padding: 0;
+        margin: 0; 
     }
 
     .nav-link {
@@ -360,10 +583,230 @@
     .course-list-header h2 {
         font-size: 24px;
     }
+    
+    .course-tabs {
+        gap: 15px; /* Kurangi jarak antar tab di mobile */
+    }
+
     .tab-item {
         font-size: 14px;
-        gap: 15px; /* Kurangi jarak di mobile */
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* 1. Tampilan Kartu: Gambar Kiri, Teks Kanan (List View) */
+    .course-card {
+        display: flex; /* KUNCI: Membuat Gambar dan Konten Sampingan */
+        align-items: flex-start; /* Elemen sejajar dari atas */
+        box-shadow: none; 
+        border: 1px solid #f0f0f0;
+        border-radius: 8px; /* Tambahkan border radius untuk kerapian */
+        padding: 10px; /* Tambahkan sedikit padding di sekeliling kartu */
+    }
+    
+    /* 2. Ukuran Gambar di Kiri */
+    .course-image-wrapper {
+        width: 120px; 
+        height: 120px;
+        padding-bottom: 0;
+        flex-shrink: 0; /* Pastikan gambar tidak menyusut */
+        margin-right: 15px; /* Jarak antara Gambar dan Teks */
+    }
+    
+    .course-image {
+        border-radius: 6px;
+    }
+    
+    /* 3. Konten Teks di Kanan */
+    .card-content {
+        padding: 0; /* Hapus padding yang tumpang tindih */
+        flex-grow: 1;
+    }
+
+    .course-title {
+        font-size: 16px; 
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+    
+    .course-description {
+        display: none; /* Sembunyikan deskripsi panjang */
+    }
+    
+    /* 4. TATA LETAK INSTRUKTUR, RATING, DAN HARGA */
+    
+    /* Instruktur Info: Atur agar Rating/Harga TIDAK MENEKAN Instruktur ke bawah */
+    .instructor-info {
+        border-top: none; /* Hapus garis pemisah di mobile */
+        padding-top: 0;
+        margin-bottom: 10px; 
+    }
+    
+    .instructor-avatar {
+        width: 25px; /* Perkecil avatar */
+        height: 25px;
+    }
+
+    /* Rating & Harga Footer (Harus di bawah Teks) */
+    .rating-price-footer {
+        /* Ubah Flex Direction: Gunakan Flexbox untuk menata Rating (Kiri) dan Harga (Kanan) */
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between; /* Harga didorong ke kanan */
+        align-items: center; 
+        margin-top: 10px; /* Jarak dari detail Instruktur */
+    }
+
+    /* PENTING: Perbaiki tata letak Rating agar sejajar dengan harga */
+    .rating {
+        display: flex; /* Gunakan flex untuk menata bintang dan angka */
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .course-price {
+        /* Warna dan Ukuran Harga */
+        font-size: 16px; 
     }
 
 
+    /* bagian newsletter */
+    .newsletter {
+        margin: 40px 0;
+        padding: 0 20px;
+    }
+    
+    .newsletter-content {
+        padding: 40px 20px;
+    }
+    
+    .newsletter-content h2 {
+        font-size: 24px;
+    }
+
+    /* Di mobile, paksa input dan tombol menumpuk jika layar sangat kecil */
+    .newsletter-form {
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+    .newsletter-form input[type="email"] {
+        border-radius: 6px; /* Bulatkan semua sudut di mobile */
+        margin-bottom: 10px; /* Jarak antara input dan tombol */
+    }
+
+    .btn-subscribe {
+        border-radius: 6px; /* Bulatkan semua sudut di mobile */
+    }
+
+
+
+
+    /* Responsive Footer */
+    .footer {
+    padding: 30px 20px;
+    }
+
+    .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    }
+
+    .footer-info {
+    max-width: 100%;
+    }
+
+    .footer-links {
+    flex-direction: column;
+    gap: 25px;
+    }
+
+    .footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    }
+
+    .footer-links ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    }
+
+    .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+    }
+
+    .footer-section ul {
+    display: none;
+    margin-top: 8px;
+    }
+
+    .footer-section.active ul {
+    display: block;
+    }
+
+    .footer-section h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    }
+
+    .footer-section h4::after {
+    content: "›";
+    font-size: 18px;
+    transition: transform 0.3s;
+    }
+
+    .footer-section.active h4::after {
+    transform: rotate(90deg);
+    }   
+
+
+    .social-icons {
+    order: -1; /* supaya ikon sosial tampil di atas teks hak cipta */
+    display: flex;
+    gap: 15px;
+    }
+
+    .social-icons a {
+    font-size: 20px;
+    }
+
+    .footer-bottom p {
+    font-size: 13px;
+    color: #777;
+    }
+
+
+
+    .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #333;
+    text-decoration: none;
+    }
+
+    .social-icons a:hover {
+    border-color: #999;
+    }
+
+
+
+
+
 }
+
+
