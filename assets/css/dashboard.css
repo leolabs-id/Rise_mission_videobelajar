@@ -133,12 +133,13 @@
 
 .course-list {
     max-width: 1200px;
-    margin: 140px auto 20px auto;
+    margin: 10px auto 20px auto;
     padding: 0 40px;
 }
 
 .course-list-header {
-    margin-bottom: 26px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .course-list-header h2 {
@@ -451,19 +452,6 @@
   max-width: 350px;
 }
 
-.logo {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.logo .video {
-  color: #ffb500;
-}
-
-.logo .belajar {
-  color: #ff5733;
-}
-
 .tagline {
   font-weight: 600;
   margin-bottom: 8px;
@@ -532,8 +520,11 @@
 
 /* Responsif Navbar */
 @media (max-width: 768px) {
+
+    
     .navbar-container {
         padding: 10px 20px;
+        align-items: flex-end;
     }
 
     .main-nav {

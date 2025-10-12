@@ -11,13 +11,19 @@ html, body {
     font-family: 'poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: #fffdf3; 
     color: #333;
+    padding-top: 50px;
 }
 
 /* --- NAV BAR --- */
 .navbar {
+    position: fixed;        /* buat navbar menempel di atas layar */
+    top: 0;                 /* posisi dari atas */
+    left: 0;
+    width: 100%;            /* supaya selebar layar */
     background-color: white;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    z-index: 1000;  
 }
 
 .container-logo {
